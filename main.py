@@ -1,10 +1,11 @@
 import telemetry
 import os
+import main_menu as mm
 
 if not os.path.exists("data.csv"):
     telemetry.create()
-x=input("get x; ")
-y=input("get y; ")
-z=input("get z; ")
-telemetry.append(x,y,z)
+
+
+mm.main_menu(mm.questionnaire_data, mm.club_data)
+
 telemetry.chart()

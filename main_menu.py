@@ -4,11 +4,11 @@ def choose_club_menu(club_data):
     choose_club_menu = ""
     for i in range(len(club_data)):
         choose_club_menu = choose_club_menu + f"{i+1}. {club_data[i][0]}" + "\n"
-        
+
     last_element = len(club_data) + 1
     list_length = len(club_data)
     choose_club_menu = choose_club_menu + f"{last_element}. Return to Browse Clubs\n"
-    
+
     while True:
         try:
             match int(input(choose_club_menu)):
@@ -25,24 +25,24 @@ def display_clubs(club_data):
     clubs_menu = "1.Choose a club to join\n2. Return to Main Menu.\n"
     while True:
         print("=== SUPPORT NETWORKS ===")
-    
+
         for club in club_data:
             print(f"Club Name: {club[0]}")
             print(f"Contact Info: {club[1]}")
             print(f"Club Description: {club[2]}")
             print("\n")
-            
+
         match input(clubs_menu):
             case "1":
                 choose_club_menu(club_data)
             case "2":
                 break
-                
+
 def questionnaire(questionnaire_data):
 
     last_element = str(len(questionnaire_data) + 1)
     list_length = len(questionnaire_data)
-    
+
     while True:
         print("=== QUESTIONAIRE ===")
         for index in range(len(questionnaire_data)):
@@ -50,11 +50,11 @@ def questionnaire(questionnaire_data):
         match input(f"{last_element}. Return to main menu\n"):
             case a if a == last_element:
                 break
-    
+
 
 def main_menu(questionnaire_data, club_data):
     main_menu = "=== MAIN MENU ===\n1.Take Questionnaire\n2.Join a Support Network\n3. Exit program\n"
-    
+
     while True:
         match input(main_menu):
             case "1":
@@ -64,12 +64,8 @@ def main_menu(questionnaire_data, club_data):
             case "3":
                 print("Goodbye")
                 break
-                
-            
 
-def main():
-    
-    club_data = [
+club_data = [
         ["African Diaspora Club",
         "DeLon Lewis dellewis@everettcc.edu",
         "Our mission is to provide a place for students and staff to meet, connect, and exchange ideas and to give members the opportunity to share and learn about the African culture."
@@ -86,7 +82,7 @@ def main():
         ]
         ]
 
-    questionnaire_data = [
+questionnaire_data = [
         "Are you receiveing government aid?",
         "What is your overall GPA?",
         "Do you belong to a minority group?",
@@ -95,8 +91,8 @@ def main():
         "Income?"
         ]
 
+def main():
     main_menu(questionnaire_data, club_data)
-
 
 if __name__ == "__main__":
     main()
