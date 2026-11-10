@@ -40,6 +40,72 @@ def display_clubs(club_data):
             case "2":
                 break
 
+def questionnaire_govaid(questionnaire_data):
+
+    while True:
+        print("1.", questionnaire_data[0])
+        match input("Please enter 0 for no or 1 for yes: "):
+            case "0":
+                tm.q_data[0] = 0
+                break
+            case "1":
+                tm.q_data[0] = 1
+                break
+
+
+def questionnaire_gpa(questionnaire_data):
+    gpa = 0
+
+    while True:
+        print("2.", questionnaire_data[1])
+        try:
+            gpa = float(input("Please enter your GPA: "))
+            if gpa >= 0 and gpa <= 4.0:
+                break
+            else:
+                raise ValueError
+        except ValueError:
+            print("Please enter a GPA from 0-4")
+            continue
+
+    tm.q_data[1] = gpa
+
+def questionnaire_minority(questionnaire_data):
+
+    while True:
+        print("3.", questionnaire_data[2])
+        match input("Please enter a 0 for no or a 1 for yes: "):
+            case "0":
+                tm.q_data[2] = 0
+                break
+            case "1":
+                tm.q_data[2] = 1
+                break
+
+def questionnaire_extracurricular(questionnaire_data):
+
+    while True:
+        print("4.", questionnaire_data[3])
+        match input("Please enter a 0 for no or a 1 for yes: "):
+            case "0":
+                tm.q_data[3] = 0
+                break
+            case "1":
+                tm.q_data[3] = 1
+                break
+
+def questionnaire_volunteer(questionnaire_data):
+
+    while True:
+        print("5.", questionnaire_data[4])
+        match input("Please enter a 0 for no or a 1 for yes: "):
+            case "0":
+                tm.q_data[4] = 0
+                break
+            case "1":
+                tm.q_data[4] = 1
+                break
+
 def questionnaire(questionnaire_data):
 
     last_element = str(len(questionnaire_data) + 1)
@@ -50,6 +116,16 @@ def questionnaire(questionnaire_data):
         for index in range(list_length):
             print(f"{index+1}. {questionnaire_data[index]}")
         match input(f"{last_element}. Return to main menu\n"):
+            case "1":
+                questionnaire_govaid(questionnaire_data)
+            case "2":
+                questionnaire_gpa(questionnaire_data)
+            case "3":
+                questionnaire_minority(questionnaire_data)
+            case "4":
+                questionnaire_extracurricular(questionnaire_data)
+            case "5":
+                questionnaire_volunteer(questionnaire_data)
             case a if a == last_element:
                 break
 
@@ -94,6 +170,7 @@ questionnaire_data = [
         ]
 #name, web, desc, gov_aid: 0/1, gpa: float, minority: 0/1, sports/activity: 0/1, volunteer: 0/1, income: 1-7
 scholarship_data = [["name", "website",'', ], ["name", "website", 2.5,]]
+
 
 def main():
     main_menu(questionnaire_data, club_data)
