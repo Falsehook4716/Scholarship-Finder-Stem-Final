@@ -3,9 +3,10 @@ import pandas.io.api
 import seaborn as sb
 import pandas as pd
 import matplotlib.pyplot as plt
+import math
 
 
-fieldnames = ["User", "Data1", "Data2", "Data3"]
+fieldnames = ["Data", "Value", "User"]
 
 def create():
     with open("data.csv", "w") as f:
@@ -14,15 +15,15 @@ def create():
 
 
 def append(data1=None, data2=None, data3=None):
+    user = "user" + str(pd.read_csv('data.csv').groupby('User').size().size)
     pd.DataFrame({
-        "User": ["user" + str(pd.read_csv('data.csv').groupby('User').size().size)],
-        "Data1": [data1],
-        "Data2": [data2],
-        "Data3": [data3],
+        "Data": ["Data1", "Data2", "Data3"],
+        "Value": [data1, data2, data3],
+        "User": [user, user, user]
         }).to_csv('data.csv', mode='a', index=False, header=False)
 
 
 def chart():
-    sb.catplot(data=pd.read_csv("data.csv"), x="User", y="Data1", kind="bar")
+    df = pd.read_csv("data.csv")
+    sb.catplot(data=df, x = df['Data'], y = df['Value'], hue = df['User'], kind="swarm")
     plt.show()
-
