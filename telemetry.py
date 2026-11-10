@@ -5,19 +5,32 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-fieldnames = ["Club", "Value", "User"]
+c_fieldnames = ["Club", "Value", "User"]
 
 clubs = [None, None, None]
+q_data = [None, None, None, None, None, None]
 
+q_fieldnames = ["Gov_Aid", "GPA", "Minority", "Extracurricular", "Volunteer", "Income"]
 
 def create():
-    with open("data.csv", "w") as f:
-        writer = csv.DictWriter(f, fieldnames)
+    with open("c_data.csv", "w") as f:
+        writer = csv.DictWriter(f, c_fieldnames)
         writer.writeheader()
 
+    with open("q_data.csv", "w") as f:
+        writer = csv.DictWriter(f, q_fieldnames)
+        writer.writeheader()
 
-def append(data):
-    user = "user" + str(pd.read_csv('data.csv').groupby('User').size().size)
+def q_append(data):
+    user = "user" + str(pd.read_csv('q_data.csv').groupby('User').size().size)
+    pd.DataFrame({
+        "Club": ["Gov_Aid", "GPA", "Minority", "Extracurricular", "Volunteer", "Income"],
+        "Value": [data[0], data[1], data[2], data[3], data[4], data[5]],
+        "User": [user, user, user, user, user, user]
+        }).to_csv('data.csv', mode='a', index=False, header=False)
+
+def c_append(data):
+    user = "user" + str(pd.read_csv('c_data.csv').groupby('User').size().size)
     pd.DataFrame({
         "Data": ["ADC", "ASU", "BSU"],
         "Value": [data[0], data[1], data[2]],
@@ -25,7 +38,11 @@ def append(data):
         }).to_csv('data.csv', mode='a', index=False, header=False)
 
 
-def chart():
-    df = pd.read_csv("data.csv")
+def c_chart():
+    df = pd.read_csv("c_data.csv")
     sb.catplot(data=df, x = df['Club'], y = df['Value'], hue = df['User'], kind="swarm")
+    plt.show()
+def q_chart():
+    df = pd.read_csv("q_data.csv")
+    sb.catplot(data=df, x = df['Data'], y = df['Value'], hue = df['User'], kind="swarm")
     plt.show()

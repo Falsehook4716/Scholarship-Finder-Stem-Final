@@ -7,5 +7,4 @@ if not os.path.exists("data.csv"):
 
 
 mm.main_menu(mm.questionnaire_data, mm.club_data)
-tm.append(tm.clubs)
-tm.chart()
+tm.c_append(tm.clubs)

@@ -85,13 +85,15 @@ club_data = [
         ]
 
 questionnaire_data = [
-        "Are you receiveing government aid?",
+        "Are you a participant in an assistance program?",
         "What is your overall GPA?",
         "Do you belong to a minority group?",
         "Sports involvement/extracurricular?",
         "Local and community groups?",
         "Income?"
         ]
+#name, web, desc, gov_aid: 0/1, gpa: float, minority: 0/1, sports/activity: 0/1, volunteer: 0/1, income: 1-7
+scholarship_data = [["name", "website",'', ], ["name", "website", 2.5,]]
 
 def main():
     main_menu(questionnaire_data, club_data)
