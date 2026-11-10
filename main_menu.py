@@ -1,3 +1,4 @@
+import telemetry as tm
 def choose_club_menu(club_data):
 
     print("\nSelect a club.\n")
@@ -14,6 +15,7 @@ def choose_club_menu(club_data):
             match int(input(choose_club_menu)):
                 case a if a > 0 and a <= list_length:
                     print(f"Joined {club_data[a-1][0]}.  An email will be sent shortly.")
+                    tm.clubs[a-1] = 1
                 case b if b == last_element:
                     break
         except:
@@ -45,7 +47,7 @@ def questionnaire(questionnaire_data):
 
     while True:
         print("=== QUESTIONAIRE ===")
-        for index in range(len(questionnaire_data)):
+        for index in range(list_length):
             print(f"{index+1}. {questionnaire_data[index]}")
         match input(f"{last_element}. Return to main menu\n"):
             case a if a == last_element:
