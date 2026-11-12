@@ -104,6 +104,27 @@ def questionnaire_volunteer(questionnaire_data):
                 tm.q_data[4] = 1
                 break
 
+def questionnaire_income(questionaire_data):
+
+    while True:
+        print("6.", questionnaire_data[5])
+        print("Please choose your income level from the following options:")
+        print("1. $0 - $18,000")
+        print("2. $18,001 - $27,000")
+        print("3. $27,001 - $56,000")
+        print("4. $56,001 - $68,000")
+        print("5. $68,001 - $79,000")
+        print("6. $79,001 - $100,000")
+        print("7. $100,001 and above")
+        try:
+            match int(input("Please enter a number from 1-7: ")):
+                case a if a >= 1 and a <= 7:
+                    tm.q_data[5] = a
+                    break
+        except ValueError:
+            print("Please enter a number from 1-7")
+            continue
+
 def questionnaire(questionnaire_data):
 
     last_element = str(len(questionnaire_data) + 1)
@@ -124,6 +145,8 @@ def questionnaire(questionnaire_data):
                 questionnaire_extracurricular(questionnaire_data)
             case "5":
                 questionnaire_volunteer(questionnaire_data)
+            case "6":
+                questionnaire_income(questionnaire_data)
             case a if a == last_element:
                 break
 
