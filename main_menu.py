@@ -60,9 +60,7 @@ def questionnaire_gpa(questionnaire_data):
         print("2.", questionnaire_data[1])
         try:
             gpa = float(input("Please enter your GPA: "))
-            if gpa >= 0 and gpa <= 4.0:
-                break
-            else:
+            if not (gpa >= 0 and gpa <= 4.0):
                 raise ValueError
         except ValueError:
             print("Please enter a GPA from 0-4")
