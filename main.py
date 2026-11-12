@@ -69,7 +69,6 @@ def get_scholarships(data):
 
 
 
-
-print(get_scholarships(tm.q_data))
+get_scholarships(tm.q_data)
 
 tm.c_chart()
