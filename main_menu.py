@@ -167,7 +167,7 @@ questionnaire_data = [
         "Income?"
         ]
 #name, web, desc, gov_aid: 0/1, gpa: float, minority: 0/1, sports/activity: 0/1, volunteer: 0/1, income: 1-7
-scholarship_data = [["name", "website",'', ], ["name", "website", 2.5,]]
+scholarship_data = [["name", "website", '', ], ["name", "website", 2.5,]]
 
 
 def main():
