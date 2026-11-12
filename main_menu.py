@@ -190,7 +190,18 @@ questionnaire_data = [
         "Income?"
         ]
 #name, web, desc, gov_aid: 0/1, gpa: float, minority: 0/1, sports/activity: 0/1, volunteer: 0/1, income: 1-7
-scholarship_data = [["name", "website", '', ], ["name", "website", 2.5,]]
+scholarship_data = [
+                ["Merit Excellence Award", "https://meritexcellence.org", '', 3.85, '', 1, '', ''],
+                ["Federal Pell Grant", "https://fafsa.gov/pell", 1, '', '', '', '', 1],
+                ["STEM Future Leaders", "https://stemleaders.edu", '', 3.6, '', 1, 1, ''],
+                ["Community First Scholarship", "https://communityfirst.org", '', 3.2, '', 1, '', 1, ''],
+                ["Hispanic Heritage Fund", "https://hispanicheritage.edu", '', 3.0, 1, '', '', ''],
+                ["Blue Ribbon Academic", "https://blueribbonacademy.org", '', 3.9, '', 1, 1, ''],
+                ["Rural Opportunity Grant", "https://ruralopportunity.gov", 1, 3.1, '', '', 1, 3],
+                ["Minority Engineers Alliance", "https://minorityengineers.org", '', 3.4, '', 1, 1, '', ''],
+                ["Youth Volunteer Corps", "https://youthvolunteer.org", '', 2.8, '', '', 1, 4],
+                ["Presidential Scholarship", "https://presidential.edu", '', 4.0, '', 1, 1, 7]
+                  ]
 
 
 def main():

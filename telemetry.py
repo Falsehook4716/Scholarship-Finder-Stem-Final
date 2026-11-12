@@ -22,12 +22,12 @@ def create():
         writer.writeheader()
 
 def q_append(data):
-    user = "user" + str(pd.read_csv('q_data.csv').groupby('User').size().size)
+    user = "user" + str(pd.read_csv('c_data.csv').groupby('User').size().size)
     pd.DataFrame({
         "Club": ["Gov_Aid", "GPA", "Minority", "Extracurricular", "Volunteer", "Income"],
         "Value": [data[0], data[1], data[2], data[3], data[4], data[5]],
         "User": [user, user, user, user, user, user]
-        }).to_csv('data.csv', mode='a', index=False, header=False)
+        }).to_csv('q_data.csv', mode='a', index=False, header=False)
 
 def c_append(data):
     user = "user" + str(pd.read_csv('c_data.csv').groupby('User').size().size)
@@ -35,7 +35,7 @@ def c_append(data):
         "Data": ["ADC", "ASU", "BSU"],
         "Value": [data[0], data[1], data[2]],
         "User": [user, user, user]
-        }).to_csv('data.csv', mode='a', index=False, header=False)
+        }).to_csv('c_data.csv', mode='a', index=False, header=False)
 
 
 def c_chart():
