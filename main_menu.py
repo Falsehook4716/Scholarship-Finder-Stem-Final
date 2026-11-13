@@ -152,7 +152,7 @@ def questionnaire(questionnaire_data):
 
 
 def main_menu(questionnaire_data, club_data):
-    main_menu = "=== MAIN MENU ===\n1.Take Questionnaire\n2.Join a Support Network\n3. Exit program\n"
+    main_menu = "=== MAIN MENU ===\n1.Take Questionnaire\n2. Join a Support Network\n3. Display Club Chart\n4. Exit program\n"
 
     while True:
         match input(main_menu):
@@ -161,6 +161,8 @@ def main_menu(questionnaire_data, club_data):
             case "2":
                 display_clubs(club_data)
             case "3":
+                tm.c_chart()
+            case "4":
                 print("Goodbye")
                 break
 

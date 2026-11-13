@@ -70,5 +70,3 @@ def get_scholarships(data):
 
 
 get_scholarships(tm.q_data)
-
-tm.c_chart()
