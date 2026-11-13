@@ -19,42 +19,26 @@ def get_scholarships(data):
     #compare values
     for scholarship in mm.scholarship_data:
         #checks
-        qual = False
+        qual = True
         for value in range(2, len(scholarship)):
             match value:
-                case 2:
-                    if (scholarship[value] == '' or data[0] == None) or data[0] == scholarship[value]:
-                        qual = True
-                    else:
+                case 2: #gov_aid
+                    if not ((scholarship[value] == '' or data[0] == None) or data[0] == scholarship[value]):
                         qual = False
-                case 3:
-                    if (scholarship[value] == '' or data[1] == None) or data[1] >= scholarship[value]:
-                        qual = True
-                    else:
+                case 3: #GPA
+                    if not ((scholarship[value] == '' or data[1] == None) or data[1] >= scholarship[value]):
                         qual = False
-
-                case 4:
-                    if (scholarship[value] == '' or data[2] == None) or data[2] == scholarship[value]:
-                        qual = True
-                    else:
+                case 4: #Minority
+                    if not ((scholarship[value] == '' or data[2] == None) or data[2] == scholarship[value]):
                         qual = False
-
-                case 5:
-                    if (scholarship[value] == '' or data[3] == None) or data[3] == scholarship[value]:
-                        qual = True
-                    else:
+                case 5: #Extracurricular
+                    if not ((scholarship[value] == '' or data[3] == None) or data[3] == scholarship[value]):
                         qual = False
-
-                case 6:
-                    if (scholarship[value] == '' or data[4] == None) or data[4] == scholarship[value]:
-                        qual = True
-                    else:
+                case 6: #Volunteer
+                    if not ((scholarship[value] == '' or data[4] == None) or data[4] == scholarship[value]):
                         qual = False
-
-                case 7:
-                    if (scholarship[value] == '' or data[5] == None) or data[5] <= scholarship[value]:
-                        qual = True
-                    else:
+                case 7: #Income
+                    if not ((scholarship[value] == '' or data[5] == None) or data[5] <= scholarship[value]):
                         qual = False
 
         if qual:

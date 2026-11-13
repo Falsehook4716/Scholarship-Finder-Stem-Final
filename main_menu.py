@@ -18,7 +18,7 @@ def choose_club_menu(club_data):
                     tm.clubs[a-1] = 1   #and save the user's selected club data to telemetry
                 case b if b == last_element:  #if the user chooses the last_element on the numbered list, then that means they have chosen to return to the previous menu
                     break   #exit the loop and return to the previous menu
-        except:  #if user inputs a non-integer value, 
+        except:  #if user inputs a non-integer value,
             continue   #loop the menu again until they provide valid input
 
 
@@ -30,16 +30,16 @@ def display_clubs(club_data):
         print("=== SUPPORT NETWORKS ===") #Display a menu of support networks (clubs)
 
         for club in club_data:  #This will display the club name, contact info, and description for each club in the club_data list
-            print(f"Club Name: {club[0]}")  
-            print(f"Contact Info: {club[1]}")  
+            print(f"Club Name: {club[0]}")
+            print(f"Contact Info: {club[1]}")
             print(f"Club Description: {club[2]}")
             print("\n")
 
         match input(clubs_menu):  #Display the options of selecting a club to join, or exit back to the previous menu
             case "1":  #if user selects 1, then go to the menu to choose a club to join
-                choose_club_menu(club_data) 
+                choose_club_menu(club_data)
             case "2":  #if user selects 2, then return to the previous menu
-                break  
+                break
 
 def questionnaire_govaid(questionnaire_data):
     '''Takes input and saves user data to answer Government Aid question on scholarship questionnaire.'''
@@ -203,11 +203,11 @@ scholarship_data = [
                 ["Merit Excellence Award", "https://meritexcellence.org", '', 3.85, '', 1, '', ''],
                 ["Federal Pell Grant", "https://fafsa.gov/pell", 1, '', '', '', '', 1],
                 ["STEM Future Leaders", "https://stemleaders.edu", '', 3.6, '', 1, 1, ''],
-                ["Community First Scholarship", "https://communityfirst.org", '', 3.2, '', 1, '', 1, ''],
+                ["Community First Scholarship", "https://communityfirst.org", '', 3.2, '', 1, '', 1],
                 ["Hispanic Heritage Fund", "https://hispanicheritage.edu", '', 3.0, 1, '', '', ''],
                 ["Blue Ribbon Academic", "https://blueribbonacademy.org", '', 3.9, '', 1, 1, ''],
                 ["Rural Opportunity Grant", "https://ruralopportunity.gov", 1, 3.1, '', '', 1, 3],
-                ["Minority Engineers Alliance", "https://minorityengineers.org", '', 3.4, '', 1, 1, '', ''],
+                ["Minority Engineers Alliance", "https://minorityengineers.org", '', 3.4, '', 1, 1, ''],
                 ["Youth Volunteer Corps", "https://youthvolunteer.org", '', 2.8, '', '', 1, 4],
                 ["Presidential Scholarship", "https://presidential.edu", '', 4.0, '', 1, 1, 7]
                   ]
