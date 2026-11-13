@@ -12,6 +12,7 @@ q_data = [None, None, None, None, None, None]
 
 q_fieldnames = ["Gov_Aid", "GPA", "Minority", "Extracurricular", "Volunteer", "Income"]
 
+#create csv files with headers
 def create():
     with open("c_data.csv", "w") as f:
         writer = csv.DictWriter(f, c_fieldnames)
@@ -21,6 +22,8 @@ def create():
         writer = csv.DictWriter(f, q_fieldnames)
         writer.writeheader()
 
+
+#add data to csv files
 def q_append(data):
     user = "user" + str(pd.read_csv('c_data.csv').groupby('User').size().size)
     pd.DataFrame({
@@ -38,6 +41,7 @@ def c_append(data):
         }).to_csv('c_data.csv', mode='a', index=False, header=False)
 
 
+#create charts
 def c_chart():
     df = pd.read_csv("c_data.csv")
     sb.catplot(data=df, x = df['Club'], y = df['Value'], hue = df['User'], kind="swarm")
