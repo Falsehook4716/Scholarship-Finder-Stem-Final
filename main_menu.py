@@ -157,7 +157,7 @@ def questionnaire(questionnaire_data):
 
 
 def main_menu(questionnaire_data, club_data):
-    main_menu = "=== MAIN MENU ===\n1.Take Questionnaire\n2. Join a Support Network\n3. Display Club Chart\n4. Exit program\n"
+    main_menu = "=== MAIN MENU ===\n1. Take Questionnaire\n2. Join a Support Network\n3. Display Club Chart\n4. Exit program\n"
 
     while True:   #will loop infinitely until user inputs a valid choice 1-3
         match input(main_menu):  #Display main menu and ask user input
