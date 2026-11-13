@@ -4,7 +4,7 @@ def choose_club_menu(club_data):
     print("\nSelect a club.\n")
     choose_club_menu = ""    #initialize an empty string to store the menu of clubs in
     for i in range(len(club_data)):    #for each club in the club_data
-        choose_club_menu = choose_club_menu + f"{i+1}. {club_data[i][0]}" + "\n"  #this creates a numbered list of all the clubs.  It was done this way so more clubs could be added and this would dynamically adjust to the number of clubs displayed.
+        choose_club_menu = choose_club_menu + f"{i+1}. {club_data[i][0]}" + "\n"  #this creates a numbered list of all the club names.  It was done this way so more clubs could be added and this would dynamically adjust to the number of clubs displayed.
 
     last_element = len(club_data) + 1
     list_length = len(club_data)
@@ -145,13 +145,13 @@ def questionnaire(questionnaire_data):
             case "2":    #if user choose the GPA question
                 questionnaire_gpa(questionnaire_data)   #they are taken to the function that allows them to enter their response
             case "3":   #Minority question
-                questionnaire_minority(questionnaire_data)   #etc.
+                questionnaire_minority(questionnaire_data)   #function for minority question
             case "4":    #Extracurricular question
-                questionnaire_extracurricular(questionnaire_data)
+                questionnaire_extracurricular(questionnaire_data)  #function for extracurricular question
             case "5":    #Volunteer work question
-                questionnaire_volunteer(questionnaire_data)
+                questionnaire_volunteer(questionnaire_data)   #function for volunteer question
             case "6":    #Income range question
-                questionnaire_income(questionnaire_data)
+                questionnaire_income(questionnaire_data)  #function for income range question
             case a if a == last_element:  #if user chooses 7 which is the last option on the list, then that means they want to exit back to main menu
                 break   #return to main menu
 
